@@ -1,0 +1,24 @@
+{
+  "name": "crud-app-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryant-bardales/CRUD-APP-BACKEND.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bryant-bardales/CRUD-APP-BACKEND/issues"
+  },
+  "homepage": "https://github.com/bryant-bardales/CRUD-APP-BACKEND#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1"
+  }
+}
