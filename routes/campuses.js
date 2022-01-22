@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
 
 // GET /getCampus/:campusId
 
-// POST /addCampus, add campus to database using selenium
+// POST /addCampus, add campus to database using sequelize
 
-// DELETE /deleteCampus/:campusId, delete campus from database using selenium
+// DELETE /deleteCampus/:campusId, delete campus from database using sequelize
 
 
 

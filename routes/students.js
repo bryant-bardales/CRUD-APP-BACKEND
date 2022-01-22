@@ -11,9 +11,9 @@ router.get('/', async (req, res) => {
 
 // GET /getStu/:stuId
 
-// POST /addStudent, add student to database using selenium (be careful w. the mandatory fields !)
+// POST /addStudent, add student to database using sequelize (be careful w. the mandatory fields !)
 
-// DELETE /deleteStudent/:studentId, delete student from database using selenium
+// DELETE /deleteStudent/:studentId, delete student from database using sequelize
 
 // PUT /updateStudentInfo/:studentId, update students info  (be careful w. the mandatory fields !)
 
