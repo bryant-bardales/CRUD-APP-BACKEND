@@ -9,7 +9,7 @@ var jsonParser = bodyParser.json()
 router.get("/", async (req, res) => {
     try {
         const allCampuses = await campuses.findAll()
-        res.status(200).json(allCampuses)
+		res.status( allCampuses == null ? 204 : 200).json(allCampuses)  
     }
     // need to set up something for empty database " no campus found "
     catch (e) {
@@ -24,10 +24,9 @@ router.get('/:campusId', async (req, res) => {
         const campus = await campuses.findOne({
             where: { campus_id: req.params.campusId },
         })
-        res.status(200).json(campus)
+		res.status( campus == null ? 204 : 200).json(campus)  
     }
 
-    // need to fix when college not found 
 
     catch (e) {
         res.json(e)

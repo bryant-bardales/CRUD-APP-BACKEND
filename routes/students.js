@@ -10,9 +10,8 @@ router.get('/', async (req, res) => {
     console.log("ping")
     try {
         const allStudents = await students.findAll();
-        res.status(200).json(allStudents)
+		res.status( allStudents == null ? 204 : 200).json(allStudents)
     }
-       // need to set up something for empty database " no student found "
     catch (e) {
         res.json(e)
     }
@@ -25,7 +24,7 @@ router.get("/byCampus/:campusName", async (req, res) => {
 		const studentsByCampus = await students.findAll({
 			where: { campus: req.params.campusName }
 		});
-		res.status(200).json(studentsByCampus)
+		res.status( studentsByCampus == null ? 204 : 200).json(studentsByCampus)
 	} 
     catch (e) {
 		res.json(e);
@@ -39,7 +38,8 @@ router.get('/byStudentId/:studentId', async (req, res) => {
         const student = await students.findOne({
             where: { stu_id: req.params.studentId },
         })
-		res.status(200).json(student)
+        // res.status(204).json("No data found")
+		res.status( student == null ? 204 : 200).json(student)
     }
     catch (e) {
         res.json(e)
@@ -75,12 +75,13 @@ router.delete('/:studentId', async (req, res) => {
 // PUT /updateStudentInfo/:studentId, update students info  (be careful w. the mandatory fields !)
 
 router.put('/:studentId', jsonParser, async (req, res) => {
+
+    // handle id not exist 
     try {
         let newStudent = await students.update(req.body, {
             where: { stu_id: req.params.studentId }
         });
-        res.status(200).json(newStudent);
-    }
+		res.status(200).json(newStudent)    }
     catch (e) {
         res.json(e)
     }
