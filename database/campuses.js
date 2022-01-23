@@ -6,7 +6,7 @@ const campuses = db.define("campus", {
     campus_id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        // allowNull: false,
+        allowNull: false,
         primaryKey: true,
     },
 
@@ -29,6 +29,8 @@ const campuses = db.define("campus", {
         type: Sequelize.TEXT,
         allowNull: true,
     },
+
+    
 }, {
     timestamps: false,
     initialAutoIncrement: 1

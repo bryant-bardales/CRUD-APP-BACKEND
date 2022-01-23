@@ -1,13 +1,18 @@
 const router = require('express').Router()
-const { campuses, students } = require('../database/index')
+const { students } = require('../database')
+var bodyParser = require('body-parser')
+var jsonParser = bodyParser.json()
+
 
 // GET /getAllStu       // get all students
 
-router.get('/', async (res) => {
+router.get('/', async (req, res) => {
+    console.log("ping")
     try {
         const allStudents = await students.findAll();
         res.status(200).json(allStudents)
     }
+       // need to set up something for empty database " no student found "
     catch (e) {
         res.json(e)
     }
@@ -15,10 +20,10 @@ router.get('/', async (res) => {
 
 // GET /getAllStu/:campusName   // get all students who attend * campus
 
-router.get("/:campusName", async (req, res) => {
+router.get("/byCampus/:campusName", async (req, res) => {
 	try {
 		const studentsByCampus = await students.findAll({
-			where: { campusId: req.params.id }
+			where: { campus: req.params.campusName }
 		});
 		res.status(200).json(studentsByCampus)
 	} 
@@ -29,9 +34,11 @@ router.get("/:campusName", async (req, res) => {
 
 // GET /getStu/:stuId
 
-router.get('/:studentId', async (req, res) => {
+router.get('/byStudentId/:studentId', async (req, res) => {
     try {
-        const student = await students.findByPK(req.params.id)
+        const student = await students.findOne({
+            where: { stu_id: req.params.studentId },
+        })
 		res.status(200).json(student)
     }
     catch (e) {
@@ -41,7 +48,7 @@ router.get('/:studentId', async (req, res) => {
 
 // POST /addStudent, add student to database using sequelize (be careful w. the mandatory fields !)
 
-router.post("/", async (req, res) => {
+router.post("/", jsonParser, async (req, res) => {
 	try {
 		const addStudent = await students.create(req.body);
 		res.status(200).json(addStudent);
@@ -56,7 +63,7 @@ router.post("/", async (req, res) => {
 router.delete('/:studentId', async (req, res) => {
     try {
         await students.destroy({
-            where: { id: req.params.id }
+            where: { stu_id: req.params.studentId }
         })
         res.sendStatus(204)
     }
@@ -67,10 +74,10 @@ router.delete('/:studentId', async (req, res) => {
 
 // PUT /updateStudentInfo/:studentId, update students info  (be careful w. the mandatory fields !)
 
-router.put('/:studentId', async (req, res) => {
+router.put('/:studentId', jsonParser, async (req, res) => {
     try {
         let newStudent = await students.update(req.body, {
-            where: { id: req.params.id }
+            where: { stu_id: req.params.studentId }
         });
         res.status(200).json(newStudent);
     }

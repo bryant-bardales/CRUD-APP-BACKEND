@@ -1,4 +1,4 @@
-create table student (
+create table students (
 	stu_id SERIAL NOT NULL PRIMARY KEY,
 	stu_name VARCHAR(50) NOT NULL,
 	gpa INT NOT NULL,
@@ -6,16 +6,16 @@ create table student (
 	campus VARCHAR(50) ,
 	email VARCHAR(250) NOT NULL
 );
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (1, 'Garvin Aireton', 1, 'https://images.generated.photos/ywPCC-wnQ9k4yFPh9Bm0regReQmnm0k4sJmx8VB2c5A/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTQ4NTgzLmpwZw.jpg', 'Baruch College', 'gaireton0@miibeian.gov.cn');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (2, 'Ollie Abeau', 3, 'https://images.generated.photos/rF4wxnkJB05QCyY5eH_0IJKZocKAVGPVNwXCC_a0Vuw/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODc1MjU2LmpwZw.jpg', 'Brooklyn College', 'oabeau1@shareasale.com');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (3, 'Oliy Rappa', 1, 'https://images.generated.photos/IiEuf1b4H3hSgwYVbBb5gC5oYXFnChpVTebEI2ZMKE4/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjcwMDI0LmpwZw.jpg', null, 'orappa2@bizjournals.com');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (4, 'Blithe Elcomb', 4, 'https://images.generated.photos/2xsAky_fbIK_KfAnpCQx4hbhpx4h6j1ZJFmbJMiGcWA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MDA1NzA2LmpwZw.jpg', 'Baruch College', 'belcomb3@digg.com');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (5, 'Egbert Dumbelton', 2, 'https://images.generated.photos/c1K0keuKcT9_k-PcN2Rv0RWHEL7vbY1YVcWnIILfRA0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Mjk5NDA1LmpwZw.jpg', 'Hunter College', 'edumbelton4@pinterest.com');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (6, 'Nicolais Callingham', 3, 'https://images.generated.photos/MnMiiGGAKidu4MUWu15UmMuOMOZGXC4NpFf2h9WyJD8/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTE3NTUyLmpwZw.jpg', null, 'ncallingham5@opensource.org');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (7, 'Rudyard Hurlston', 2, 'https://images.generated.photos/QEgtGPPK1dAMsfkWCunC5Y-tUp7wUpSPWSSuymxjdcY/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MzgzOTY2LmpwZw.jpg', 'Brooklyn College', 'rhurlston6@google.pl');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (8, 'Casper Roughan', 3, 'https://images.generated.photos/Uqs8KsUYSt-zKNl73q7-LU7Z4w3oYuIQyEMbmfunErg/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTU2MDQ3LmpwZw.jpg', 'City College of New York', 'croughan7@japanpost.jp');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (9, 'Leah Blachford', 2, 'https://images.generated.photos/DQCgfY4VzqCQiXzKfqgkWWLudHnVIEIQk6PzMV1KQSo/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjU2ODc4LmpwZw.jpg', 'Hunter College', 'lblachford8@icq.com');
-insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (10, 'Sasha Cancutt', 3, 'https://images.generated.photos/2t_fqzmh637EfM62gF70JRDDs1UZ9PU3VNHsEJil1zM/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NzI3ODM3LmpwZw.jpg', 'City College of New York', 'scancutt9@unesco.org');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (1, 'Garvin Aireton', 1, 'https://images.generated.photos/ywPCC-wnQ9k4yFPh9Bm0regReQmnm0k4sJmx8VB2c5A/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTQ4NTgzLmpwZw.jpg', 'Baruch College', 'gaireton0@miibeian.gov.cn');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (2, 'Ollie Abeau', 3, 'https://images.generated.photos/rF4wxnkJB05QCyY5eH_0IJKZocKAVGPVNwXCC_a0Vuw/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODc1MjU2LmpwZw.jpg', 'Brooklyn College', 'oabeau1@shareasale.com');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (3, 'Oliy Rappa', 1, 'https://images.generated.photos/IiEuf1b4H3hSgwYVbBb5gC5oYXFnChpVTebEI2ZMKE4/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjcwMDI0LmpwZw.jpg', null, 'orappa2@bizjournals.com');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (4, 'Blithe Elcomb', 4, 'https://images.generated.photos/2xsAky_fbIK_KfAnpCQx4hbhpx4h6j1ZJFmbJMiGcWA/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MDA1NzA2LmpwZw.jpg', 'Baruch College', 'belcomb3@digg.com');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (5, 'Egbert Dumbelton', 2, 'https://images.generated.photos/c1K0keuKcT9_k-PcN2Rv0RWHEL7vbY1YVcWnIILfRA0/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/Mjk5NDA1LmpwZw.jpg', 'Hunter College', 'edumbelton4@pinterest.com');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (6, 'Nicolais Callingham', 3, 'https://images.generated.photos/MnMiiGGAKidu4MUWu15UmMuOMOZGXC4NpFf2h9WyJD8/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTE3NTUyLmpwZw.jpg', null, 'ncallingham5@opensource.org');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (7, 'Rudyard Hurlston', 2, 'https://images.generated.photos/QEgtGPPK1dAMsfkWCunC5Y-tUp7wUpSPWSSuymxjdcY/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MzgzOTY2LmpwZw.jpg', 'Brooklyn College', 'rhurlston6@google.pl');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (8, 'Casper Roughan', 3, 'https://images.generated.photos/Uqs8KsUYSt-zKNl73q7-LU7Z4w3oYuIQyEMbmfunErg/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTU2MDQ3LmpwZw.jpg', 'City College of New York', 'croughan7@japanpost.jp');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (9, 'Leah Blachford', 2, 'https://images.generated.photos/DQCgfY4VzqCQiXzKfqgkWWLudHnVIEIQk6PzMV1KQSo/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjU2ODc4LmpwZw.jpg', 'Hunter College', 'lblachford8@icq.com');
+insert into students(stu_id, stu_name, gpa, stu_img_url, campus, email) values (10, 'Sasha Cancutt', 3, 'https://images.generated.photos/2t_fqzmh637EfM62gF70JRDDs1UZ9PU3VNHsEJil1zM/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NzI3ODM3LmpwZw.jpg', 'City College of New York', 'scancutt9@unesco.org');
 
 
 create table campuses (

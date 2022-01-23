@@ -2,7 +2,6 @@ const Sequelize = require("sequelize");
 const db = require("./database");
 
 const students = db.define("student", {
-
     stu_id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -37,6 +36,9 @@ const students = db.define("student", {
         type: Sequelize.STRING,
         allowNull: false,
     },
+
+}, {
+    timestamps: false,
 })
 
 module.exports = students
