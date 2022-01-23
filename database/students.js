@@ -1,13 +1,14 @@
 const Sequelize = require("sequelize");
 const db = require("./database");
 
-const students = db.sequelize.define ("student", {
-    stu_id: {
+const students = db.define("student", {
+    id: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        primaryKey: true
     },
 
-    stu_name: {
+    name: {
         type: Sequelize.STRING,
         allowNull: false,
     },
@@ -20,17 +21,17 @@ const students = db.sequelize.define ("student", {
         allowNull: false,
     },
 
-    stu_img_url: {
+    img: {
         type: Sequelize.STRING,
         allowNull: false,
     },
 
-    campus: {
+    att_campus: {
         type: Sequelize.STRING,
         allowNull: false,
     },
 
-    email: {
+    stu_email: {
         type: Sequelize.STRING,
         allowNull: false,
     },
