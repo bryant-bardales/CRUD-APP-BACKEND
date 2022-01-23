@@ -3,6 +3,14 @@ const { students } = require('../database')
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,           
+   optionSuccessStatus:200,
+}
+
+router.use(cors(corsOptions))
 
 // GET /getAllStu       // get all students
 
