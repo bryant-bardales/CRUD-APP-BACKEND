@@ -2,13 +2,14 @@ const Sequelize = require("sequelize");
 const db = require("./database");
 
 const students = db.define("student", {
-    id: {
+    stu_id: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
 
-    name: {
+    stu_name: {
         type: Sequelize.STRING,
         allowNull: false,
     },
@@ -21,20 +22,23 @@ const students = db.define("student", {
         allowNull: false,
     },
 
-    img: {
+    stu_img_url: {
         type: Sequelize.STRING,
         allowNull: false,
     },
 
-    att_campus: {
+    campus: {
+        type: Sequelize.STRING,
+        allowNull: true,
+    },
+
+    email: {
         type: Sequelize.STRING,
         allowNull: false,
     },
 
-    stu_email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-    },
+}, {
+    timestamps: false,
 })
 
 module.exports = students
