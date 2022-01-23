@@ -2,31 +2,35 @@ const Sequelize = require("sequelize");
 const db = require("./database");
 
 const campuses = db.define("campus", {
-    id: {
+
+    campus_id: {
         type: Sequelize.INTEGER,
+        autoIncrement: true,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
     },
 
-    name: {
+    campus_name: {
         type: Sequelize.STRING,
         allowNull: false,
     },
 
-    location: {
+    campus_location: {
         type: Sequelize.STRING,
         allowNull: false,
     },
 
-    img: {
+    campus_img_url: {
         type: Sequelize.STRING,
         allowNull: false,
     },
 
-    description: {
+    campus_description: {
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: true,
     },
-})
+}, {
+    timestamps: false
+  })
 
 module.exports = campuses

@@ -3,7 +3,7 @@ create table student (
 	stu_name VARCHAR(50) NOT NULL,
 	gpa INT NOT NULL,
 	stu_img_url TEXT NOT NULL,
-	campus VARCHAR(50) ,
+	att_campus VARCHAR(50) ,
 	email VARCHAR(250) NOT NULL
 );
 insert into student (stu_id, stu_name, gpa, stu_img_url, campus, email) values (1, 'Garvin Aireton', 1, 'https://images.generated.photos/ywPCC-wnQ9k4yFPh9Bm0regReQmnm0k4sJmx8VB2c5A/rs:fit:256:256/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/NTQ4NTgzLmpwZw.jpg', 'Baruch College', 'gaireton0@miibeian.gov.cn');

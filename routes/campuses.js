@@ -1,14 +1,15 @@
 const router = require('express').Router()
-const { campuses } = require('../database/index')
+const { campuses } = require('../database')
 
 
 // GET /getAllCampus, get all campuses info w/student info using sequelize
 
-router.get("/", async (res) => {
+router.get("/", async (req, res) => {
     try {
         const allCampuses = await campuses.findAll()
         res.status(200).json(allCampuses)
     }
+    // need to set up something for empty database " no campus found "
     catch (e) {
         res.json(e);
     }
@@ -18,7 +19,7 @@ router.get("/", async (res) => {
 
 router.get('/:campusId', async (req, res) => {
     try {
-        const campus = await campuses.findByPK(req.params.id)
+        const campus = await campuses.findByPK(req.params.campusId)
         res.status(200).json(campus)
     }
     catch (e) {
