@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const { campuses } = require('../database')
+var bodyParser = require('body-parser')
+var jsonParser = bodyParser.json()
 
 
 // GET /getAllCampus, get all campuses info w/student info using sequelize
@@ -19,9 +21,14 @@ router.get("/", async (req, res) => {
 
 router.get('/:campusId', async (req, res) => {
     try {
-        const campus = await campuses.findByPK(req.params.campusId)
+        const campus = await campuses.findOne({
+            where: { campus_id: req.params.campusId },
+        })
         res.status(200).json(campus)
     }
+
+    // need to fix when college not found 
+
     catch (e) {
         res.json(e)
     }
@@ -30,9 +37,12 @@ router.get('/:campusId', async (req, res) => {
 
 // POST /addCampus, add campus to database using sequelize
 
-router.post("/", async (req, res) => {
+router.post("/", jsonParser, async (req, res) => {
+    console.log(req.body)
     try {
-        const addCampus = await campuses.create(req.body)
+        const addCampus = await campuses.create(
+            req.body
+        )
         res.status(200).json(addCampus)
     }
     catch (e) {
@@ -45,7 +55,7 @@ router.post("/", async (req, res) => {
 router.delete('/:campusId', async (req, res) => {
     try {
         await campuses.destroy({
-            where: { id: req.params.id }
+            where: { campus_id: req.params.campusId }
         })
         res.sendStatus(204)
     }
@@ -56,12 +66,13 @@ router.delete('/:campusId', async (req, res) => {
 
 // PUT /:campusId update campus info in database using sequelize
 
-router.put('/:campusId', async (req, res) => {
+router.put('/:campusId', jsonParser, async (req, res) => {
+
     try {
-        let newCampus = await campuses.update(req.body, {
-            where: { id: req.params.id }
+        let update = await campuses.update(req.body, {
+            where: { campus_id: 9 }
         });
-        res.status(200).json(newCampus);
+        res.status(200).json(update);
     }
     catch (e) {
         res.json(e)

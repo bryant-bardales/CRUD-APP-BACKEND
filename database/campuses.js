@@ -6,7 +6,7 @@ const campuses = db.define("campus", {
     campus_id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
-        allowNull: false,
+        // allowNull: false,
         primaryKey: true,
     },
 
@@ -30,7 +30,11 @@ const campuses = db.define("campus", {
         allowNull: true,
     },
 }, {
-    timestamps: false
+    timestamps: false,
+    initialAutoIncrement: 1
+    
   })
+
+
 
 module.exports = campuses

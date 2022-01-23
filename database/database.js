@@ -9,7 +9,7 @@ const db = new Sequelize(
         host: 'localhost',
         port: 5432,
         username: 'kylexue',
-        database: 'university',
+        database: 'university'
     }
 )
 
