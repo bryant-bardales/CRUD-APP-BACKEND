@@ -78,7 +78,7 @@ router.put('/:campusId', jsonParser, async (req, res) => {
 
     try {
         let update = await campuses.update(req.body, {
-            where: { campus_id: 9 }
+            where: { campus_id: req.params.campusId }
         });
         res.status(200).json(update);
     }
